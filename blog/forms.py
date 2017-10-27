@@ -24,3 +24,5 @@ class RegistrationForm(forms.Form):
                                widget=forms.PasswordInput(attrs={'name': 'password', 'placeholder': 'Password'}))
     email = forms.EmailField(label='',
                              widget=forms.EmailInput(attrs={'name': 'email', 'placeholder': 'Email'}))
+
+

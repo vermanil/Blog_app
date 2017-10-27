@@ -10,7 +10,7 @@ def welcomePage(request):
 
 def loginForm(request):
     form = candidateLoginForm()
-    return render(request, "Login.html", {'form': form})
+    return render(request, "Login.html", {'form': form, 'status': 1})
 
 def registerForm(request):
     form = RegistrationForm()
@@ -24,10 +24,10 @@ def Login(request):
         if user is not None:
             login(request, user)
             url = "/blog"
-            return HttpResponse("Login Done")
+            return HttpResponseRedirect(url)
         else:
             form = candidateLoginForm()
-            return render(request, "Login.html", {'form': form})
+            return render(request, "Login.html", {'form': form, 'status':0})
 
 def registration(request):
     if request.method == 'POST':
@@ -39,7 +39,7 @@ def registration(request):
                 # print(alreadyUser.count())
             if (alreadyUser.count() != 0):
                 form = RegistrationForm()
-                return render(request, "reg.html", {'form': form, "name": name, 'stat': "User already exist"})
+                return render(request, "Register.html", {'form': form, 'status':0})
             else:
                 user = User.objects.create_user(
                     username=form.cleaned_data['username'],
@@ -50,6 +50,10 @@ def registration(request):
                 user.last_name = form.cleaned_data['last_name']
                 user.save()
                 form = candidateLoginForm()
-                return render(request, "Login.html", {'form': form})
+                return render(request, "Login.html", {'form': form, 'status':1})
         else:
             return HttpResponse("Form is invalid")
+
+
+def allBlogs(request):
+    return render(request, "ArticleList.html")

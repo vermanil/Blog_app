@@ -8,6 +8,11 @@
         <button type="submit" class="save btn btn-default">submit</button>
     </form>
           </div>
+    {% if status == 0 %}
+      <script>
+      alert("User credentials wrong");
+      </script>
+  {% endif %}
           </div>
 {% endblock %}
 </body>
