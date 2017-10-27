@@ -1,0 +1,14 @@
+{% extends 'Home.html' %}
+{% block content %}
+    <div class="row"></div>
+          <div class="col-sm-6 col-lg-6 col-md-6 imgcntr " style="width: 70%">
+    <h1 style="text-align: center">Login</h1>
+    <form method="POST" action={{ "/accounts/" }}{{ name }}{{ "/login" }} class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">submit</button>
+    </form>
+          </div>
+          </div>
+{% endblock %}
+</body>
+</html>
