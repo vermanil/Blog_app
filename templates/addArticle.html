@@ -1,0 +1,46 @@
+{% extends 'Home.html' %}
+{% block content %}
+    <div class="w3-container text-center">
+  <h2>Post Content</h2>
+
+  <div class="w3-card-4 text-center text-info" style="width:43%; margin-left: 27%;">
+    <header class="w3-container w3-blue">
+      <h1>Content</h1>
+    </header>
+
+    <div class="w3-container">
+      <ul class="tabs teal" style="margin-bottom: 30px; margin-top: 52px;">
+		<h2>About your content</h2>
+        <form>
+  <b>Title:</b><br>
+  <input type="text" name="title"><br><br>
+    <b>Author:</b><br>
+  <input type="text" name="firstname"><br><br>
+        <b>Featured Image:</b><br><br>
+        <input id="image" type="file" name="image"><br><br>
+        <b>Date:</b><br>
+        <input type="DATETIME" name="date">
+
+    </form>
+          <br><br>
+    <b>Content:</b><br>
+    <textarea></textarea>
+
+    <button>Submit</button>
+	</ul>
+    </div>
+
+    <footer class="w3-container w3-blue">
+      <h5>Content</h5>
+    </footer>
+  </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.pkgd.min.js"></script>
+
+<script>$(function() { $('textarea').froalaEditor() });</script>
+{% endblock %}

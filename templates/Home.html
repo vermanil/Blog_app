@@ -2,25 +2,64 @@
 <html lang="en">
 <head>
     <title> Blog - app</title>
-    <style>
-        body
-{
-	background: #f5f5f5;
-}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-h5
-{
-	font-weight: 400;
-}
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Include external CSS. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+        .w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:cadetblue!important}
+        a {
+            color: brown;
+        }
+        .fr-basic, .fr-wrapper{
+            width: 95%;
+        }
+        #image{
+            margin-left: 35%;
+        }
+        input {
+            width: 80%;
+        }
     </style>
 </head>
 <body>
+<div class="container well text-center glyphicon-text-color">
+<h3>Welcome to the blogging site.</h3>
+</div>
 {% block content %}
-<div class="container white z-depth-2">
-	<ul class="tabs teal">
-		<li class="tab col s3"><a class="white-text active" href="/login">login</a></li>
-		<li class="tab col s3"><a class="white-text" href="/register">register</a></li>
+<div class="container white z-depth-2 center">
+</div>
+</div>
+    <div class="w3-container text-center">
+  <h2>Create Blog</h2>
+  <p>There is a simple blogging site where people can create and post their blog</p>
+
+  <div class="w3-card-4 text-center" style="width:30%; margin-left: 35%;">
+    <header class="w3-container w3-blue">
+      <h1>Create Account</h1>
+    </header>
+
+    <div class="w3-container">
+      <ul class="tabs teal" style="margin-bottom: 30px; margin-top: 52px;">
+		<li class="tab col s3 btn btn-info"><a class="white-text active" href="/login">login</a></li><br><br>
+		<li class="tab col s3 btn btn-info"><a class="white-text" href="/register">register</a></li>
 	</ul>
+    </div>
+
+    <footer class="w3-container w3-blue">
+      <h5>Create Account</h5>
+    </footer>
+  </div>
 </div>
 {% endblock %}
 </body>

@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import candidateLoginForm, RegistrationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 def welcomePage(request):
@@ -29,6 +30,12 @@ def Login(request):
             form = candidateLoginForm()
             return render(request, "Login.html", {'form': form, 'status':0})
 
+@login_required(login_url='/login')
+def Clogout(request):
+    logout(request)
+    return HttpResponseRedirect("/login")
+
+
 def registration(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -54,6 +61,10 @@ def registration(request):
         else:
             return HttpResponse("Form is invalid")
 
-
+@login_required(login_url='/login')
 def allBlogs(request):
     return render(request, "ArticleList.html")
+
+@login_required(login_url='/login')
+def addArticle(request):
+    return render(request, "addArticle.html")

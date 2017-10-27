@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^register', views.registerForm, name="register"),
     url(r'^registration', views.registration, name="registration"),
     url(r'^doLogin', views.Login, name="Login"),
-    url(r'^blog', views.allBlogs, name="allBlogs")
+    url(r'^logout', views.Clogout, name='Clogout'),
+    url(r'^blog', views.allBlogs, name="allBlogs"),
+    url(r'^addArticle', views.addArticle, name='addArticle')
 
 ]
