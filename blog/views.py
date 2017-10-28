@@ -64,7 +64,7 @@ def registration(request):
 
 @login_required(login_url='/login')
 def allBlogs(request):
-    listOfArticle = Article.objects.all()
+    listOfArticle = Article.objects.all().order_by("Date")
     return render(request, "ArticleList.html", {"ArticleList": listOfArticle})
 
 @login_required(login_url='/login')
