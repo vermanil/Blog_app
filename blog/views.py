@@ -86,3 +86,8 @@ def saveArticle(request):
     except:
         return HttpResponse(0)
 
+@login_required(login_url='/login')
+def aboutArticle(request, id):
+    article = Article.objects.get(id = 1)
+    user = request.user.username
+    return render(request, 'Article.html', {'article':article, 'user':user})

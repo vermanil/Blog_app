@@ -1,0 +1,15 @@
+{% extends 'Home.html' %}
+{% block content %}
+<div class="container text-info text-center">
+<p style="float: right">{{ user }}</p>
+    <h2>{{ article.title }}</h2>
+    <h3>{{ article.author }}</h3>
+    <img src="{{ article.Image }}">
+    <p>{{ article.Date }}</p>
+    <div>
+        {{ article.Content|safe}}
+    </div>
+
+
+</div>
+{% endblock %}

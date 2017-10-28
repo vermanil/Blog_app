@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^logout', views.Clogout, name='Clogout'),
     url(r'^blog', views.allBlogs, name="allBlogs"),
     url(r'^addArticle', views.addArticle, name='addArticle'),
-    url(r'^saveArticle', views.saveArticle, name='saveArticle')
-
+    url(r'^saveArticle', views.saveArticle, name='saveArticle'),
+    url(r'^article/(?P<id>\w+)/$', views.aboutArticle, name='aboutArticle')
 ]
