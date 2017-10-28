@@ -8,6 +8,6 @@ from django.db import models
 class Article(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
-    Date = models.DateTimeField()
+    Date = models.DateField()
     Image = models.ImageField()
     Content = models.TextField()

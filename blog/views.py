@@ -64,7 +64,8 @@ def registration(request):
 
 @login_required(login_url='/login')
 def allBlogs(request):
-    return render(request, "ArticleList.html")
+    listOfArticle = Article.objects.all()
+    return render(request, "ArticleList.html", {"ArticleList": listOfArticle})
 
 @login_required(login_url='/login')
 def addArticle(request):
@@ -72,12 +73,16 @@ def addArticle(request):
 
 @login_required(login_url='/login')
 def saveArticle(request):
-    Article.objects.create(
-        title = request.POST['title'],
-        author = request.POST['author'],
-
-
-    )
-
-    return HttpResponse(1)
+    try:
+        print("hello")
+        article = Article.objects.create(
+            title = request.POST['title'],
+            author = request.POST['author'],
+            Date = request.POST['date'],
+            Image = request.POST['image'],
+            Content = request.POST['content']
+        )
+        return HttpResponse("/blogs")
+    except:
+        return HttpResponse(0)
 

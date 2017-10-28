@@ -26,8 +26,11 @@ $(document).ready(function(){
         $.post( "/saveArticle", data).done(function( status ) {
                 if(status == "0")
             {
-                alert("Exam code does not exist, please add")
+                alert(" Wrong Credentials entered")
             }
+            else {
+                $(location).attr('href',status);
+                }
 
 	});
 		return false;
