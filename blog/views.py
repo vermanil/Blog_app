@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import candidateLoginForm, RegistrationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .models import Article
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
@@ -68,3 +69,15 @@ def allBlogs(request):
 @login_required(login_url='/login')
 def addArticle(request):
     return render(request, "addArticle.html")
+
+@login_required(login_url='/login')
+def saveArticle(request):
+    Article.objects.create(
+        title = request.POST['title'],
+        author = request.POST['author'],
+
+
+    )
+
+    return HttpResponse(1)
+

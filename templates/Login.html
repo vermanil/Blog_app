@@ -9,16 +9,16 @@
       <ul class="tabs teal" style="margin-bottom: 30px; margin-top: 52px;">
 		<div class="row">
           <div class="col-sm-6 col-lg-6 col-md-6 imgcntr " style="width: 70%">
-    <div class="text-info text-center">
+            <div class="text-info text-center">
 {#              <h1 style="text-align: center">Login</h1>#}
-    <form method="POST" action={{ "/doLogin" }} class="post-form">{% csrf_token %}
-        {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.label_tag }} {{ field }} <br><br>
-        </div>
-    {% endfor %}
-        <button type="submit" class="save btn btn-default">submit</button>
-    </form>
+                <form method="POST" action={{ "/doLogin" }} class="post-form">{% csrf_token %}
+                    {% for field in form %}
+                    <div class="fieldWrapper">
+                        {{ field.label_tag }} {{ field }} <br><br>
+                    </div>
+                {% endfor %}
+                    <button type="submit" class="save btn btn-default">submit</button>
+                </form>
           </div>
           </div>
         </div>

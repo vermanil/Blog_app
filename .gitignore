@@ -8,5 +8,9 @@ blog/__init__.pyc
 blog_app/urls.pyc
 blog_app/settings.pyc
 blog_app/wsgi.pyc
+blog/__pycache__/
+blog/admin.pyc
+blog/models.pyc
+blog_app/__pycache__/
 
 

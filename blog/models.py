@@ -6,8 +6,8 @@ from django.db import models
 
 # Create your models here.
 class Article(models.Model):
-    title = models.CharField()
-    author = models.CharField()
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
     Date = models.DateTimeField()
-    Image = models.CharField()
+    Image = models.ImageField()
     Content = models.TextField()
