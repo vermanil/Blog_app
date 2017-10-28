@@ -1,12 +1,15 @@
 {% extends 'Home.html' %}
 {% block content %}
-<div class="container text-info text-center">
-<p style="float: right">{{ user }}</p>
-    <h2>{{ article.title }}</h2>
-    <h3>{{ article.author }}</h3>
-    <img src="{{ article.Image }}">
-    <p>{{ article.Date }}</p>
-    <div>
+    <h2> <a class="addArticle circle text-center">{{ user }}</a></h2> <br><br>
+    <h2><a class="addArticle" style="margin-right: -13%" href="/logout">Logout</a></h2> <br>
+
+<div class="container text-info singleArticle">
+<h3>{{ article.author }}</h3> <br>
+    <p>{{ article.Date }}</p> <br>
+
+    <h1>{{ article.title }}</h1><br>
+    <img style="width: 44%; height: 50%" src="{{ article.Image }}">
+    <div style="margin-top: 10%">
         {{ article.Content|safe}}
     </div>
 

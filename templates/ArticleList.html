@@ -1,20 +1,21 @@
 {% extends 'Home.html' %}
 {% block content %}
-    <a style="text-align: right" href="/addArticle">Add Article</a>
-    <a style="text-align: right" href="/logout">Logout</a>
+    <h2> <a class="addArticle circle text-center" style="float: left">{{ user }}</a></h2>
+    <h2><a class="addArticle" href="/addArticle">Add Article</a></h2><br>
+    <h2><a class="addArticle" href="/logout">Logout</a></h2>
     <div class="text-center text-info">
     <h3>Article List</h3> <br>
         <div class="container">
             {% for article in ArticleList %}
        <div class="col-lg-3">
             <div class="well articleCard">
-                <h2><a href="">{{ article.title }}</a></h2>
-                <p>Author:{{ article.author }}</p>
                 <img src={{ article.Image }}>
-               <div style="width: 100%;">{{ article.Content|safe }}</div>
-                <div class="text-center">
-                 <p>{{ article.Date }}</p>
-            <a href="/article/{{ article.id }}">read more..</a>
+                <h2><a href="">{{ article.title }}</a></h2> <br>
+{#               <div style="width: 100%;">{{ article.Content|safe }}</div>#}
+                <div>
+                    <p style="float: left">Author:{{ article.author }}</p> <br><br>
+                 <p style="float: left">{{ article.Date }}</p>
+            <a style="float: right" href="/article/{{ article.id }}">read more..</a>
                 </div>
             </div>
         </div>

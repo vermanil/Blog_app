@@ -9,5 +9,5 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     Date = models.DateField()
-    Image = models.ImageField()
+    Image = models.TextField(null=True, blank=True)
     Content = models.TextField()

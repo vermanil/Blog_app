@@ -15,5 +15,36 @@ input {
 }
 img {
     width: 100%;
-    height: auto;
+    height: 50%;
+}
+.backGround {
+    background-image: url("/static/BlogHeader.jpg");
+    width:94%;
+}
+.position {
+    float: left;
+}
+
+.addArticle {
+    float: right;
+    margin-right: 3%;
+}
+
+.circle {
+    background: rebeccapurple;
+    border-radius: 122px;
+    color: white;
+    height: 45px;
+    font-weight: bold;
+    width: 199px;
+    display: table;
+    margin: 1% 2%;
+}
+
+@media(min-width: 992px) {
+    .singleArticle {
+        width: 670px;
+        background-color: azure;
+        margin-top: 2%;
+    }
 }

@@ -64,7 +64,7 @@ def registration(request):
 
 @login_required(login_url='/login')
 def allBlogs(request):
-    listOfArticle = Article.objects.all().order_by("Date")
+    listOfArticle = Article.objects.all().order_by("-Date")
     return render(request, "ArticleList.html", {"ArticleList": listOfArticle})
 
 @login_required(login_url='/login')
@@ -75,6 +75,7 @@ def addArticle(request):
 def saveArticle(request):
     try:
         print("hello")
+        print("Image: ", request.POST['image'])
         article = Article.objects.create(
             title = request.POST['title'],
             author = request.POST['author'],
@@ -88,6 +89,6 @@ def saveArticle(request):
 
 @login_required(login_url='/login')
 def aboutArticle(request, id):
-    article = Article.objects.get(id = 1)
+    article = Article.objects.get(id=id)
     user = request.user.username
     return render(request, 'Article.html', {'article':article, 'user':user})
