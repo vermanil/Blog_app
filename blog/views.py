@@ -11,12 +11,18 @@ def welcomePage(request):
     return render(request, "Home.html", {})
 
 def loginForm(request):
-    form = candidateLoginForm()
-    return render(request, "Login.html", {'form': form, 'status': 1})
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/blogs")
+    else:
+        form = candidateLoginForm()
+        return render(request, "Login.html", {'form': form, 'status': 1})
 
 def registerForm(request):
-    form = RegistrationForm()
-    return render(request, "Register.html", {'form': form})
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/blogs")
+    else:
+        form = RegistrationForm()
+        return render(request, "Register.html", {'form': form})
 
 def Login(request):
     if request.method == 'POST':
