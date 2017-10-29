@@ -83,8 +83,6 @@ def addArticle(request):
 @login_required(login_url='/login')
 def saveArticle(request):
     try:
-        print("hello")
-        print("Image: ", request.POST['image'])
         article = Article.objects.create(
             title = request.POST['title'],
             author = request.POST['author'],
