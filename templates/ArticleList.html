@@ -6,6 +6,7 @@
     <div class="text-center text-info">
     <h3>Article List</h3> <br>
         <div class="container">
+            {% if ArticleList %} }
             {% for article in ArticleList %}
        <div class="col-lg-3">
             <div class="well articleCard">
@@ -20,6 +21,9 @@
             </div>
         </div>
             {% endfor %}
+        {% else %}
+                <h3>There is no article yet added</h3>
+                {% endif %}
         </div>
     </div>
 {% endblock %}

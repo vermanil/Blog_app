@@ -18,6 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^',include("blog.urls")),
-    url(r'^froala_editor/', include('froala_editor.urls')),
+    url(r'^',include("blog.urls"))
 ]
