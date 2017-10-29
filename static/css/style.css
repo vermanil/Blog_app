@@ -27,19 +27,22 @@ img {
 
 .addArticle {
     float: right;
-    margin-right: 3%;
+    margin-right: 4%;
 }
 
 .circle {
+    padding: 10px;
     background: rebeccapurple;
-    border-radius: 122px;
+    border-radius: 5px;
     color: white;
-    height: 45px;
-    font-weight: bold;
-    width: 199px;
+    /* height: 45px; */
+    /* width: 110%; */
     display: table;
-    margin: 1% 2%;
+    margin: 1% 3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 
 @media(min-width: 992px) {
     .singleArticle {

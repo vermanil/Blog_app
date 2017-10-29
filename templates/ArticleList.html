@@ -1,8 +1,8 @@
 {% extends 'Home.html' %}
 {% block content %}
-    <h3> <a class="addArticle circle text-center" style="float: left">{{ user }}</a></h3>
-    <h2><a class="addArticle" href="/addArticle">Add Article</a></h2><br>
-    <h2><a class="addArticle" href="/logout">Logout</a></h2>
+    <h4> <a class="addArticle circle text-center" style="float: left">{{ user }}</a></h4>
+    <h4><a class="addArticle" href="/addArticle">Add Article</a></h4><br>
+    <h4><a class="addArticle" href="/logout">Logout</a></h4>
     <div class="text-center text-info">
     <h3>Article List</h3> <br>
         <div class="container">
@@ -10,7 +10,7 @@
        <div class="col-lg-3">
             <div class="well articleCard">
                 <img src={{ article.Image }}>
-                <h2><a href="">{{ article.title }}</a></h2> <br>
+                <h3><a href="">{{ article.title }}</a></h3> <br>
 {#               <div style="width: 100%;">{{ article.Content|safe }}</div>#}
                 <div>
                     <p style="float: left">Author:{{ article.author }}</p> <br><br>

@@ -8,7 +8,10 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 def welcomePage(request):
-    return render(request, "Home.html", {})
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/blogs")
+    else:
+        return render(request, "Home.html", {})
 
 def loginForm(request):
     if request.user.is_authenticated():

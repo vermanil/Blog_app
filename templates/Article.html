@@ -1,7 +1,10 @@
 {% extends 'Home.html' %}
 {% block content %}
-    <h2> <a class="addArticle circle text-center">{{ user }}</a></h2> <br><br>
-    <h2><a class="addArticle" style="margin-right: -13%" href="/logout">Logout</a></h2> <br>
+    <h4> <a class="addArticle circle text-center">{{ user }}</a></h4> <br>
+    <h4>&nbsp;</h4>
+{#    <h4><a class="addArticle" href="/addArticle">Add Article</a></h4><br>#}
+{#    <h4><a class="addArticle" href="/logout">Logout</a></h4>#}
+    <h4><a class="addArticle" href="/logout">Logout</a></h4> <br>
 
 <div class="container text-info singleArticle">
 <h3>{{ article.author }}</h3> <br>

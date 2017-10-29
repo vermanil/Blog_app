@@ -20,8 +20,9 @@
                 <b>Featured Image:</b><br><br>
                 <input id="image" type="file" name="image" placeholder="Featured Image"><br><br>
                 <b>Date:</b><br>
-                <input id="datetime" type="DATETIME" name="date" placeholder="YY-MM-DD">
-
+               <div id='datetimepicker1'>
+                <input id="datetime" type="DATETIME" name="date" placeholder="YYYY-MM-DD">
+                   </div>
                <br><br>
                 <b>Content:</b><br>
 
@@ -43,18 +44,14 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js">
     </script>
-{#    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>#}
-{#    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>#}
-{##}
-{#    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.pkgd.min.js"></script>#}
-{##}
-{#<script>#}
-{##}
-{#    $(function() { $('textarea').froalaEditor() });#}
-{##}
-{#</script>#}
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script>$(function() {
+   $('#datetime').datepicker({
+       format: 'yyyy-mm-dd'
+   });
+ });
+    </script>
 
 
 {% load static %}
