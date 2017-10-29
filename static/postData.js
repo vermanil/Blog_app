@@ -35,7 +35,7 @@ $(document).ready(function(){
                    alert(" Wrong Credentials entered")
                }
                else {
-                   $(location).attr('href',status);
+                   $(location).attr('href','blogs');
                    }
 
         });

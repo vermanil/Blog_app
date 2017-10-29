@@ -6,12 +6,12 @@
     <div class="text-center text-info">
     <h3>Article List</h3> <br>
         <div class="container">
-            {% if ArticleList %} }
+            {% if ArticleList %}
             {% for article in ArticleList %}
        <div class="col-lg-3">
             <div class="well articleCard">
                 <img src={{ article.Image }}>
-                <h3><a href="">{{ article.title }}</a></h3> <br>
+                <h3><a href="/article/{{ article.id }}">{{ article.title }}</a></h3> <br>
 {#               <div style="width: 100%;">{{ article.Content|safe }}</div>#}
                 <div>
                     <p style="float: left">Author:{{ article.author }}</p> <br><br>
